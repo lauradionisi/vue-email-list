@@ -11,14 +11,9 @@
 <body>
     <div id="app">
        <h1>La lista delle mail è </h1> 
-       <ul>
-           <li v-for="mail in 10">{{ mailingList }} </li>
-           
+       <ul v-if="mails.length == 10">
+           <li v-for="mail in mails">{{ mail }} </li>      
        </ul>
-       
-
-        
-
     </div>
   
     

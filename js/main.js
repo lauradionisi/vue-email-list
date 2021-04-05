@@ -3,17 +3,17 @@ Vue.config.devtools = true;
 var app = new Vue({
     el: "#app",
     data: {
-        mailingList: [],             
+        mails: [],             
     },
      
     
     mounted() {
-        axios
+        for (let i = 0; i < 10; i++) {
+            axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then((result) => {
-                console.log(result.data.response);
-                this.mailingList = result.data.response;
-             });                   
-    }
-  
+                this.mails.push(result.data.response);
+             });      
+        }                    
+    }  
 });
